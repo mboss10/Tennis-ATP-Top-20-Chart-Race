@@ -1,6 +1,6 @@
 # Tennis ATP Top 20 Chart Race
 
-<a href="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/ATPTop20.gif" width="400px">
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/ATPTop20.gif" width="400">
 
 ## Introduction
 
