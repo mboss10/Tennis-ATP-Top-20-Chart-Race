@@ -54,5 +54,9 @@ SELECT
 		rankings r 
 	INNER JOIN
 		players p on p.player_id = r.player 
-	WHERE rank <21;
+	WHERE rank < 21;
 ```
+
+The technique used here is very simple given that rank is part of the ranking table so I just had to filter on `rank < 21` to get only the top 20 for each ranking week. Combined with an `INNER JOIN` with the players table it allows me to pull name, hand, date of birth, country and height of those players.
+> [!NOTE]
+> Notice how I created a full_name by concatenating first and last name. In SQLite you use 2 pipe signs `||` to concatenate strings
