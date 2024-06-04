@@ -15,7 +15,7 @@ I went through the following steps:
 
 I will detail below the different steps.
 
-### 1. Database Setup
+## 1. Database Setup
 
 Once I have downloaded the SQLite database file from Kaggle, I imported it into my local DBeaver SQL client.
 This is a very simple process:
