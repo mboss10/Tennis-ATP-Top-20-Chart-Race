@@ -17,3 +17,13 @@ I will detail below the different steps.
 
 ### 1. Database Setup
 
+Once I have downloaded the SQLite database file from Kaggle, I imported it into my local DBeaver SQL client.
+This is a very simple process:
+1. Connect to a database - select SQLite in this case
+2. Browse the folder in which I saved the SQLite database file annd select it.
+3. Test connection, success then click Finish
+
+Then I ended up with a new database, that I named Tennis_ATP, that contains 3 tables:
+1. matches = contains match results and stats (winner, loser, date, aces, etc ...)
+2. players = contains players' basic info (first_name, last_name, hand, birth_date, country_code, height, etc ...)
+3. rankings = contains players ranking per ranking period (every week almost, except for some missing periods)
