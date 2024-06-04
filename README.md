@@ -30,3 +30,4 @@ Then I ended up with a new database, that I named Tennis_ATP, that contains 3 ta
 1. matches = contains match results and stats (winner, loser, date, aces, etc ...)
 2. players = contains players' basic info (first_name, last_name, hand, birth_date, country_code, height, etc ...)
 3. rankings = contains players ranking per ranking period (every week almost, except for some missing periods)
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/DBTables.png" width="400"><br />
