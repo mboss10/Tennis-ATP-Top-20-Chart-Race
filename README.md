@@ -64,8 +64,10 @@ The technique used here is very simple given that rank is part of the ranking ta
 > [!NOTE]
 > Notice how I created a full_name by concatenating first and last name. In SQLite you use 2 pipe signs `||` to concatenate strings
 
+
   
 The other thing I wanted to include in my bar chart race is the picture of the Top player on the selected week along with its running match records (wins VS losses). So I had to come up with a query that would provide me with the necessary data to achieve this.  
+
 See below the query:  
 ```
 with cte_top1_with_points as (
