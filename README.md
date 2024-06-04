@@ -35,6 +35,7 @@ Then I ended up with a new database, that I named Tennis_ATP, that contains 3 ta
 ## 2. Data Modeling
 
 Since I am not going to create the chart race for every single player rank - that would be too many bars with some barely visible - I think it makes sense to focus on the top 20 players on each week of the ATP ranking.  
+  
 Therefore I first decided to create a view to reduce each ranking week to that subset of top 20 players, as well as join with key player information.  
 Here is the view definition:  
 ```
