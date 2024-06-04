@@ -21,7 +21,7 @@ Once I have downloaded the SQLite database file from Kaggle, I imported it into 
 This is a very simple process:
 1. Connect to a database - select SQLite in this case.  
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/Connect_a_DB.png" width="400"><br /> 
-2. Browse the folder in which I saved the SQLite database file annd select it.  
+2. Browse the folder in which I saved the SQLite database file and select it.  
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/SelectFile.png" width="400"><br />
 3. Test connection, success then click Finish.  
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/TestConnection.png" width="400"><br />
