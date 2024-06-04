@@ -10,7 +10,7 @@ The purpose of this project was to use the Huge Tennis Database that you can fin
 
 I went through the following steps:
 1. Database Setup: Creating the DB environment in DBeaver.
-2. Data Cleaning: Using SQL views to ensure clean and accurate data.
+2. Data Modeling: Defining SQL views to ensure appropriate and accurate data.
 3. Visualization: Importing the dataset into Tableau and building the dashboard with design elements inspired by the official ATP website.
 
 I will detail below the different steps.
@@ -31,3 +31,27 @@ Then I ended up with a new database, that I named Tennis_ATP, that contains 3 ta
 2. players = contains players' basic info (first_name, last_name, hand, birth_date, country_code, height, etc ...)
 3. rankings = contains players ranking per ranking period (every week almost, except for some missing periods)  
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/DBTables.png" width="150"><br />
+
+## 2. Data Modeling
+
+Since I am not going to create the chart race for every single player rank - that would be too many bars with some barely visible - I think it makes sense to focus on the top 20 players on each week of the ATP ranking.  
+Therefore I first decided to create a view to reduce each ranking week to that subset of top 20 players, as well as join with key player information.  
+Here is the view definition:  
+```
+CREATE VIEW Top20 as 
+SELECT 
+		r.ranking_date 
+		, r."rank" 
+		, r.points 
+		, p.player_id 
+		, p.name_first || ' '|| p.name_last as full_name
+		, p.hand 
+		, p.dob 
+		, p.ioc
+		, p.height 
+	FROM 
+		rankings r 
+	INNER JOIN
+		players p on p.player_id = r.player 
+	WHERE rank <21;
+```
