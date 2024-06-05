@@ -70,65 +70,70 @@ The other thing I wanted to include in my bar chart race is the picture of the T
 
 See below the query:  
 ```
-with cte_top1_with_points as (
-select distinct r.player from rankings r where r."rank" = 1 and r.points is not null
+cte_top1_with_points as (
+	select distinct r.player from rankings r where r."rank" = 1 and r.points is not null
 ),
 cte_wins as(
-select 
-	m.winner_id
-	, m.winner_name
-	, m.tourney_date
-	, count(m.winner_id) as wins_per_period
-FROM
-	matches m 
-WHERE	
-	m.winner_id in (select player from cte_top1_with_points)
-group by 1,2,3
+	select 
+		m.winner_id
+		, m.winner_name
+		, m.tourney_date
+		, count(m.winner_id) as wins_per_period
+	FROM
+		matches m 
+	WHERE	
+		m.winner_id in (select player from cte_top1_with_points)
+	group by 1,2,3
 ),
 cte_win_per_ranking as (
-select 
-	ranking_date 
-	, player_id 
-	, full_name 
-	, sum(wins_per_period) as win_per_ranking_date
-from
-Top20 t 
-inner join cte_wins on (cte_wins.winner_id = t.player_id and cte_wins.tourney_date <= t.ranking_date)
-where "rank" = 1 and points is not null
-GROUP BY 1,2,3
+	select 
+		ranking_date 
+		, player_id 
+		, full_name 
+		, sum(wins_per_period) as win_per_ranking_date
+	from
+		Top20 t 
+	inner join 
+		cte_wins on (cte_wins.winner_id = t.player_id and cte_wins.tourney_date <= t.ranking_date)
+	where 
+		"rank" = 1 and points is not null
+	GROUP BY 1,2,3
 ),
 cte_losses as(
-select 
-	m.loser_id
-	, m.loser_name
-	, m.tourney_date
-	, count(m.loser_id) as losses_per_period
-FROM
-	matches m 
-WHERE	
-	m.loser_id in (select player from cte_top1_with_points)
-group by 1,2,3
+	select 
+		m.loser_id
+		, m.loser_name
+		, m.tourney_date
+		, count(m.loser_id) as losses_per_period
+	FROM
+		matches m 
+	WHERE	
+		m.loser_id in (select player from cte_top1_with_points)
+	group by 1,2,3
 ),
 cte_loss_per_ranking as (
-select 
-	ranking_date 
-	, player_id 
-	, full_name 
-	, sum(losses_per_period) as loss_per_ranking_date
-from
-Top20 t 
-inner join cte_losses on (cte_losses.loser_id = t.player_id and cte_losses.tourney_date <= t.ranking_date)
-where "rank" = 1 and points is not null
-GROUP BY 1,2,3
+	select 
+		ranking_date 
+		, player_id 
+		, full_name 
+		, sum(losses_per_period) as loss_per_ranking_date
+	from
+		Top20 t 
+	inner join 
+		cte_losses on (cte_losses.loser_id = t.player_id and cte_losses.tourney_date <= t.ranking_date)
+	where 
+		"rank" = 1 and points is not null
+	GROUP BY 1,2,3
 )
 select 
-cte_win_per_ranking.ranking_date
-, cte_win_per_ranking.player_id 
-, cte_win_per_ranking.full_name
-, win_per_ranking_date
-, loss_per_ranking_date
-from cte_win_per_ranking
-inner join cte_loss_per_ranking on (cte_win_per_ranking.player_id = cte_loss_per_ranking.player_id and cte_win_per_ranking.ranking_date = cte_loss_per_ranking.ranking_date)
+	cte_win_per_ranking.ranking_date
+	, cte_win_per_ranking.player_id 
+	, cte_win_per_ranking.full_name
+	, win_per_ranking_date
+	, loss_per_ranking_date
+	from cte_win_per_ranking
+inner join 
+	cte_loss_per_ranking on (cte_win_per_ranking.player_id = cte_loss_per_ranking.player_id and cte_win_per_ranking.ranking_date = cte_loss_per_ranking.ranking_date)
 ```
   
 I extensively use the technique of Common Table Expression (CTE) which is a temporary result set that can be referenced in the rest of my SQL query. In this example, where I need to have for each ranking week, the top player name and its running wins and running losses, the CTEs I created help me simplify a complex queries. I break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.  
@@ -136,8 +141,63 @@ I extensively use the technique of Common Table Expression (CTE) which is a temp
 Let's break down each CTE used in the statement:  
 ```
 with cte_top1_with_points as (
-select distinct r.player from rankings r where r."rank" = 1 and r.points is not null
+	select distinct r.player from rankings r where r."rank" = 1 and r.points is not null
 ),
 ```
 Here I am selecting only top 1 player with ATP points - because I noticed browsing through the data that we have ranking rows with no points (every rows before year 1990). It is part of my cleaning process, data preparation and modeling to filter them out given I need the points for my analysis.  
 
+___
+
+```
+cte_wins as(
+	select 
+		m.winner_id
+		, m.winner_name
+		, m.tourney_date
+		, count(m.winner_id) as wins_per_period
+	FROM
+		matches m 
+	WHERE	
+		m.winner_id in (select player from cte_top1_with_points)
+	group by 1,2,3
+),
+```
+
+Here I am gettinng the count of wins per player and tournament date.
+> [!NOTE]
+> Notice how I am reusing the previous CTE `cte_top1_with_points`, which is also one of the huge advantage of CTEs: Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
+
+```
+cte_win_per_ranking as (
+	select 
+		ranking_date 
+		, player_id 
+		, full_name 
+		, sum(wins_per_period) as win_per_ranking_date
+	from
+		Top20 t 
+	inner join 
+		cte_wins on (cte_wins.winner_id = t.player_id and cte_wins.tourney_date <= t.ranking_date)
+	where 
+		"rank" = 1 and points is not null
+	GROUP BY 1,2,3
+),
+```
+
+Then in this CTE, I am adding up all the wins of the player per ranking week.  
+
+In the last 2 CTEs `cte_losses` and `cte_loss_per_ranking` I am using the same process but using loss information.
+
+```
+select 
+	cte_win_per_ranking.ranking_date
+	, cte_win_per_ranking.player_id 
+	, cte_win_per_ranking.full_name
+	, win_per_ranking_date
+	, loss_per_ranking_date
+	from cte_win_per_ranking
+inner join 
+	cte_loss_per_ranking on (cte_win_per_ranking.player_id = cte_loss_per_ranking.player_id and cte_win_per_ranking.ranking_date = cte_loss_per_ranking.ranking_date)
+```
+
+The final part of the SQL statement combines the CTEs to give for each ranking week, the top player and his running wins and losses.  
