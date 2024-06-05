@@ -200,9 +200,13 @@ inner join
 	cte_loss_per_ranking on (cte_win_per_ranking.player_id = cte_loss_per_ranking.player_id and cte_win_per_ranking.ranking_date = cte_loss_per_ranking.ranking_date)
 ```  
 
+
 The final part of the SQL statement combines the CTEs to give for each ranking week, the top player and his running wins and losses.
 
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/TopPlayerRunningWinsLosses.png" width="600"><br />  
+
+
+Now I have the data sets modeled the way I expect and can move on to the next step, build my dashboard.
 
 ## 3. Visualization
 
