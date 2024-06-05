@@ -166,7 +166,7 @@ cte_wins as(
 Here I am gettinng the count of wins per player and tournament date.
 > [!NOTE]
 > Notice how I am reusing the previous CTE `cte_top1_with_points`, which is also one of the huge advantage of CTEs: Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
-
+___
 ```
 cte_win_per_ranking as (
 	select 
@@ -185,9 +185,9 @@ cte_win_per_ranking as (
 ```
 
 Then in this CTE, I am adding up all the wins of the player per ranking week.  
-
-In the last 2 CTEs `cte_losses` and `cte_loss_per_ranking` I am using the same process but using loss information.
-
+___
+In the last 2 CTEs `cte_losses` and `cte_loss_per_ranking` I am using the same process but using loss information.<br />
+___
 ```
 select 
 	cte_win_per_ranking.ranking_date
@@ -202,3 +202,17 @@ inner join
 
 The final part of the SQL statement combines the CTEs to give for each ranking week, the top player and his running wins and losses.  
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/TopPlayerRunningWinsLosses.png" width="600"><br />
+
+## 3. Visualization
+
+export csv  
+build viz (rank with page)
+ATP look and feel
+tennis ball pie chart
+Publish to Tableau public
+
+provide link to youttube
+
+## To Go further
+find way to connect to SQLite direct
+Other analysis
