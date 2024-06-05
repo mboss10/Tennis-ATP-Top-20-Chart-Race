@@ -130,3 +130,14 @@ cte_win_per_ranking.ranking_date
 from cte_win_per_ranking
 inner join cte_loss_per_ranking on (cte_win_per_ranking.player_id = cte_loss_per_ranking.player_id and cte_win_per_ranking.ranking_date = cte_loss_per_ranking.ranking_date)
 ```
+  
+I extensively use the technique of Common Table Expression (CTE) which is a temporary result set that can be referenced in the rest of my SQL query. In this example, where I need to have for each ranking week, the top player name and its running wins and running losses, the CTEs I created help me simplify a complex queries. I break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.  
+
+Let's break down each CTE used in the statement:  
+```
+with cte_top1_with_points as (
+select distinct r.player from rankings r where r."rank" = 1 and r.points is not null
+),
+```
+Here I am selecting only top 1 player with ATP points - because I noticed browsing through the data that we have ranking rows with no points (every rows before year 1990). It is part of my cleaning process, data preparation and modeling to filter them out given I need the points for my analysis.  
+
