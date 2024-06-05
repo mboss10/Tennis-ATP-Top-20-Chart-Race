@@ -58,7 +58,7 @@ SELECT
 ```
   
 Sample view results:  
-<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/Top20Sample.png" width="400"><br />
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/Top20Sample.png" width="600"><br />
 
 The technique used here is very simple given that rank is part of the ranking table so I just had to filter on `rank < 21` to get only the top 20 for each ranking week. Combined with an `INNER JOIN` with the players table it allows me to pull name, hand, date of birth, country and height of those players.
 > [!NOTE]
@@ -201,3 +201,4 @@ inner join
 ```
 
 The final part of the SQL statement combines the CTEs to give for each ranking week, the top player and his running wins and losses.  
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/TopPlayerRunningWinsLosses.png" width="600"><br />
