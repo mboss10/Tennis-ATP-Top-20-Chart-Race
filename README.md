@@ -261,7 +261,13 @@ The technique here is to use shapes and associated each top player with a specif
 Then I needed to make sure that I filtered my Rank_unique calculated field to only display top 1 and here we go.  
 
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/PlayerHeadshot.png" width="600"><br />
+<br /><br />
 
+#### <ins>**Wins/Losses Ratio**</ins>
+
+With this visualization, my goal is to display, for each ranking week, the running ratio of winns/losses of the Top 1 player on that week inside a pie chart. Pie chart is not my favorite type of visualization but we'll see in the Dashboard that it made sense this time to use it.  
+
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/WinLossRatioPieChart.png" width="600"><br />
 
 
 export csv  
