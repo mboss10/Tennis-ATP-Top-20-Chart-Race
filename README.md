@@ -233,7 +233,7 @@ ___
 
 I need 3 visualizations to compose my dashboard
 
-#### Bar Chart Race
+#### <ins>**Bar Chart Race**</ins>
 
 This is the main visualization of my dashboard.<br />
 It is composed of 2 types of Marks: horizontal bars and shapes on a dual axis so that my shapes, which are flags representing the player's country, can be right aligned with the bars.<br />
