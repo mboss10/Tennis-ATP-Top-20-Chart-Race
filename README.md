@@ -252,6 +252,16 @@ Lastly, I am using the `RANK_UNIQUE()` function and I compute it using both the 
 > ```
 
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/BarChartRace.png" width="600"><br />
+<br /><br />
+
+#### <ins>**Player Headshot**</ins>
+
+With this visualization, my goal is to display, for each ranking week, the headshot of the Top 1 player on that week.  
+The technique here is to use shapes and associated each top player with a specific custom shape. I decided to design a rounded headshot with the player's country flag next to it. I used Figma to create those custom shapes.  
+Then I needed to make sure that I filtered my Rank_unique calculated field to only display top 1 and here we go.  
+
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/PlayerHeadshot.png" width="600"><br />
+
 
 
 export csv  
