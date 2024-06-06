@@ -210,10 +210,28 @@ Now I have the data sets modeled the way I expect and can move on to the next st
 
 ## 3. Visualization
 
+I used Tableau Public Desktop as my tool to create the visualizations and Tableau Public to publish it in my [portfolio](https://public.tableau.com/app/profile/max4890/vizzes).
+
+I performed the following steps:
+- Export the data to CSV files and used them as a datasource in Tableau
+- Build the visualizations
+- Assemble in the Dashboard
+- Publish to Tableau public
+- Create a Youtube video
+
+### CSV Export
+
+From DBeaver there is an option to export the results of a query to different formats, including .csv file. I did export both the results of my Top20 view and my advanced query in 2 .csv files. I had to work it that way because I could not easily find a solution/connector to connect my Tableau Desktop Public application with my SQLite database. I know there is a connector if you use the standard Tableau Desktop application but not Public and I don't have a product registration key for it (though I subscribed to the DataDev program ... but they give you a Tableau server instance but no Desktop reg key ... still don't understand that)
+
+Then in Tableau Public Desktop I imported my 2 files and here I am with my 2 datasources, ready to start vizzing!!
+
+
+
 export csv  
 build viz (rank with page)
 ATP look and feel
 tennis ball pie chart
+country flags icon and tennis player icons
 Publish to Tableau public
 
 provide link to youttube
