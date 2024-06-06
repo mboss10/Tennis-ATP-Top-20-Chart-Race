@@ -251,7 +251,7 @@ Lastly, I am using the `RANK_UNIQUE()` function and I compute it using both the 
 > END
 > ```
 
-
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/BarChartRace.png" width="600"><br />
 
 
 export csv  
