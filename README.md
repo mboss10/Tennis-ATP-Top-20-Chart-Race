@@ -221,11 +221,11 @@ I performed the following steps:
 
 ### CSV Export
 
-From DBeaver there is an option to export the results of a query to different formats, including .csv file. I did export both the results of my Top20 view and my advanced query in 2 .csv files. I had to work it that way because I could not easily find a solution/connector to connect my Tableau Desktop Public application with my SQLite database. I know there is a connector if you use the standard Tableau Desktop application but not Public and I don't have a product registration key for it (though I subscribed to the DataDev program ... but they give you a Tableau server instance but no Desktop reg key ... still don't understand that)
+From DBeaver there is an option to export the results of a query to different formats, including .csv file. I did export both the results of my Top20 view and my advanced query in 2 .csv files. I had to work it that way because I could not easily find a solution/connector to connect my Tableau Desktop Public application with my SQLite database. I know there is a connector if you use the standard Tableau Desktop application but not Public and I don't have a product registration key for it (though I subscribed to the DataDev program ... but they give you a Tableau server instance but no Desktop reg key ... still don't understand that)<br /><br />
 
-Then in Tableau Public Desktop I imported my 2 files and here I am with my datasource, ready to start vizzing!!
+Then in Tableau Public Desktop I imported my 2 files and here I am with my datasource, ready to start vizzing!!<br />
 
-<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/TableauDatasoource.png" width="600"><br />
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/TableauDatasource.png" width="600"><br />
 
 ___
 
@@ -235,10 +235,10 @@ I need 3 visualizations to compose my dashboard
 
 #### Bar Chart Race
 
-This is the main visualization of my dashboard.
-It is composed of 2 types of Marks: horizontal bars and shapes on a dual axis so that my shapes, which are flags representing the player's country, can be right aligned with the bars.
-I am using the Pages feature to toggle between ATP ranking weeks, and because it has a nice play button capability to run my race chart. (Spoiler alert!! I will discover that Tableau Public behaves a little differently ... more to come on that).
-Lastly, I am using the `RANK_UNIQUE()` function and I compute it using both the player's name and country to ensure that Pages each week only display the top 20 of that week.
+This is the main visualization of my dashboard.<br />
+It is composed of 2 types of Marks: horizontal bars and shapes on a dual axis so that my shapes, which are flags representing the player's country, can be right aligned with the bars.<br />
+I am using the Pages feature to toggle between ATP ranking weeks, and because it has a nice play button capability to run my race chart. (Spoiler alert!! I will discover that Tableau Public behaves a little differently ... more to come on that).<br />
+Lastly, I am using the `RANK_UNIQUE()` function and I compute it using both the player's name and country to ensure that Pages each week only display the top 20 of that week.<br /><br />
 
 
 > [!NOTE]
