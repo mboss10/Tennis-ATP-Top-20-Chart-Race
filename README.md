@@ -269,6 +269,15 @@ With this visualization, my goal is to display, for each ranking week, the runni
 
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/WinLossRatioPieChart.png" width="600"><br />
 
+### Assemble in the Dashboard
+
+Now that all the visualizations I need are ready, the last piece (but not the least one) was to assemble them in my dashboard.  
+Given that I wanted to give my dashboard the look and feel of the [official ATP website](https://www.atptour.com/en), I went on the website and grab some design elements: logos, colors, fonts, background images.  
+I am quite satisfied with the results, I wanted to keep it simple.  
+Now remember the pie chart for Wins/Losses ratio, I wanted this to look like a tennis ball (hence the pie chart format). So I used a transparent tennis ball PNG image and placed the pie chart underneath. Et voilà!  
+
+<img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/Dashboard.png" width="600"><br />
+
 
 export csv  
 build viz (rank with page)
