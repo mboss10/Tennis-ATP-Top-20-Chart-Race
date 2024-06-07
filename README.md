@@ -281,7 +281,9 @@ Now remember the pie chart for Wins/Losses ratio, I wanted this to look like a t
 
 ### Publish to Tableau public
 
+My dashboard is ready, the final step is to publish it to Tableau Public and then open it and enjoy the animation by using the Play button that automatically changes the chart week after week.  
 
+And this is where it gets annoying ... I discovered that Tableau Public disables animations, which means my chart race will never play in Tableau public and users have to manually click to get weeks to change :( 
 
 export csv  
 build viz (rank with page)
