@@ -283,17 +283,22 @@ Now remember the pie chart for Wins/Losses ratio, I wanted this to look like a t
 
 My dashboard is ready, the final step is to publish it to Tableau Public and then open it and enjoy the animation by using the Play button that automatically changes the chart week after week.  
 
-And this is where it gets annoying ... I discovered that Tableau Public disables animations, which means my chart race will never play in Tableau public and users have to manually click to get weeks to change :( 
+And this is where it gets annoying ... I discovered that Tableau Public disables animations, which means my chart race will never play in Tableau public and users have to manually click to get weeks to change :(   
 
-export csv  
-build viz (rank with page)
-ATP look and feel
-tennis ball pie chart
-country flags icon and tennis player icons
-Publish to Tableau public
+[Link to the dashboard in Tableau Public](https://public.tableau.com/app/profile/max4890/viz/TennisATPRaceChart_17171291340530/RankingDashboard-Full)
 
-provide link to youttube
+
+### Create a Youtube video
+
+Plan B, I had to run the animation on my Tableau Desktop and record my screen in a video that I then published on Youtube.  
+Here is the result: [ATP Top 20 Chart Race - 1990/2024](https://youtu.be/fjtddUFqQXk)
+
 
 ## To Go further
-find way to connect to SQLite direct
-Other analysis
+
+
+Here are some potential enhancements for this project:
+
+1. Direct SQLite Connection with Tableau: It would be beneficial to explore ways to connect Tableau directly to SQLite databases. While the feasibility of this with Tableau Public is uncertain, investigating possible connectors could eliminate the need to export CSV files, streamlining the data analysis process.
+
+2. Further Analysis Opportunities: This tennis dataset offers numerous possibilities for deeper analysis. Although the primary goal of this project was to experiment with and create a bar chart race—more for its visual appeal than analytical value—there is significant potential for deriving meaningful insights. For example, leveraging the extensive match statistics, we could investigate correlations between players' demographics and their performance outcomes. This could yield fascinating findings and enhance our understanding of the data.
