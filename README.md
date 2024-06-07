@@ -279,6 +279,10 @@ Now remember the pie chart for Wins/Losses ratio, I wanted this to look like a t
 <img src="https://github.com/mboss10/Tennis-ATP-Top-20-Chart-Race/blob/main/Dashboard.png" width="600"><br />
 
 
+### Publish to Tableau public
+
+
+
 export csv  
 build viz (rank with page)
 ATP look and feel
